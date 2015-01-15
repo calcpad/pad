@@ -1,6 +1,44 @@
 <template name="padDetail">
+
+	{{#contentFor "headerButtonLeft"}}
+		{{>ionNavBackButton text="All Pads"}}
+	{{/contentFor}}
+
 	{{#contentFor "headerTitle"}}
     <h1 class="title">{{pad.name}}</h1>
 	{{/contentFor}}
-	YO DETAILS
+
+	{{#ionView}}
+		{{#ionContent}}
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="item item-divider">
+              Output
+            </div>
+            <div class="item item-text-wrap">
+              {{outputHelper}}
+            </div>
+          </div>
+				</div>
+        <div class="col">
+          <div class="card">
+            <div class="item item-divider">
+              Input
+            </div>
+            <div class="item item-text-wrap">
+							{{#autoForm collection="Pads" id="pad-update" type="update" doc=pad}}
+								{{> afQuickField name='x' placeholder='3'}}
+								{{> afQuickField name='y' placeholder='5'}}
+								{{> afQuickField name='operator' placeholder='+'}}
+                <button type="submit" class="button button-block">Update</button>
+							{{/autoForm}}
+
+
+            </div>
+          </div>
+				</div>
+      </div>
+		{{/ionContent}}
+	{{/ionView}}
 </template>
