@@ -1,9 +1,31 @@
 <template name="padsList">
-	{{#contentFor "headerButtonRight"}}
-    <button class="button button-clear pull-right" data-ion-modal="padAdd">
-			{{> ionIcon icon='ios-plus'}}
-    </button>
-	{{/contentFor}}
+	{{#if padListEdit}}
+
+		{{#contentFor "headerButtonLeft"}}
+      <button class="button button-clear pull-left" data-action="padListToggleIndex">
+        Done
+      </button>
+		{{/contentFor}}
+
+		{{#contentFor "headerButtonRight"}}
+
+		{{/contentFor}}
+
+	{{else}}
+
+		{{#contentFor "headerButtonLeft"}}
+      <button class="button button-clear pull-left" data-action="padListToggleEdit">
+        Edit
+      </button>
+		{{/contentFor}}
+
+		{{#contentFor "headerButtonRight"}}
+      <button class="button button-clear pull-right" data-ion-modal="padAdd">
+				{{> ionIcon icon='ios-plus-empty'}}
+      </button>
+		{{/contentFor}}
+
+	{{/if}}
 
 	{{#contentFor "headerTitle"}}
     <h1 class="title">Pads</h1>
