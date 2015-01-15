@@ -1,0 +1,11 @@
+<template name="ionItemCP">
+	{{#if isAnchor}}
+    <a class="{{itemClasses}}" href="{{pathFor route=this.route data=this.data query=this.query hash=this.hash}}" target="{{target}}">
+			{{> UI.contentBlock}}
+    </a>
+	{{else}}
+    <div class="{{itemClasses}}">
+			{{> UI.contentBlock}}
+    </div>
+	{{/if}}
+</template>

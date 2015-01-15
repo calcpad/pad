@@ -1,0 +1,10 @@
+<template name="padAdd">
+	{{#ionModal focusFirstInput=true title="New Pad"}}
+	<div class="list">
+		{{#autoForm collection="Pads" id="pad-add" type="insert"}}
+			{{> afQuickField name='name' placeholder='Wacky Math'}}
+      <button type="submit" class="button button-block">Add</button>
+		{{/autoForm}}
+	</div>
+	{{/ionModal}}
+</template>

@@ -1,0 +1,24 @@
+<template name="padsList">
+	{{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-right" data-ion-modal="padAdd">
+			{{> ionIcon icon='ios-plus'}}
+    </button>
+	{{/contentFor}}
+
+	{{#contentFor "headerTitle"}}
+    <h1 class="title">Pads</h1>
+	{{/contentFor}}
+
+	{{#ionView}}
+		{{#ionContent}}
+			{{#ionList}}
+				{{#each padsList}}
+					{{>_padItem }}
+				{{/each}}
+			{{/ionList}}
+		{{/ionContent}}
+
+
+	{{/ionView}}
+
+	</template>

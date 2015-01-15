@@ -1,0 +1,1 @@
+Pads.permit(['insert', 'update', 'remove']).apply();
