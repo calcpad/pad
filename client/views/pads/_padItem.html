@@ -1,9 +1,21 @@
 <template name="_padItem">
-		{{#ionItemCP route='padDetail' query=routeQuery iconRight=true}}
+	{{#if padListEdit}}
+		{{#ionItemCP buttonLeft=true}}
       <h2>{{name}}</h2>
       <p>
 				additional text
       </p>
+			{{#quickRemoveButton collection="Pads" _id=this._id class="button button-clear button-assertive"}}
+        {{>ionIcon icon="minus-circled"}}
+			{{/quickRemoveButton}}
+		{{/ionItemCP}}
+	{{else}}
+		{{#ionItemCP route='padDetail' query=routeQuery iconRight=true}}
+			<h2>{{name}}</h2>
+			<p>
+				additional text
+			</p>
 			{{> ionIcon icon="ios-arrow-right" }}
 		{{/ionItemCP}}
+	{{/if}}
 </template>
