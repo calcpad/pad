@@ -27,11 +27,10 @@
               Input
             </div>
             <div class="item item-text-wrap">
-							{{#autoForm collection="Pads" id="pad-update" type="update" doc=pad}}
+							{{#autoForm collection="Pads" id="pad-update" type="update" doc=pad autosave=true}}
 								{{> afQuickField name='x' placeholder='3'}}
 								{{> afQuickField name='y' placeholder='5'}}
 								{{> afQuickField name='operator' placeholder='+'}}
-                <button type="submit" class="button button-block">Update</button>
 							{{/autoForm}}
 
 
